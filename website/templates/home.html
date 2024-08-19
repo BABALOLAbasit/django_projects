@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAMBAT CUSTOMERS DATABASE</title>
+</head>
+<body>
+    <h1>HAMBAT CUSTOMERS DATABASE</h1>
+
+    {% for customer in all %}
+        <p><strong>{{ customer.first_name }} {{ customer.last_name }}</strong><br/> 
+        Email: {{ customer.email }}<br/>
+        Age: {{ customer.age }}<br/><br/>
+        <hr>
+    </p>
+    {% endfor %}
+    
+    {% if not all %}
+        <p>No customers available.</p>
+    {% endif %}
+
+</body>
+</html>
+{% endblock %}
